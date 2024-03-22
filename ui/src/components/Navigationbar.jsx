@@ -24,7 +24,7 @@ const Navigationbar = () => {
                 </Link>
                 <RouterLink to="/service">
                     <li className='my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded'>
-                        Services
+                        Events
                     </li>
                 </RouterLink>
                 <RouterLink to="/signin">
@@ -40,11 +40,11 @@ const Navigationbar = () => {
     return (
         <nav style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>
             <div className='h-10vh flex justify-between items-center text-white bg-black px-20 py-4'>
-                <h1 className='text-3xl font-bold text-[#00df9a]'>GatherCloud</h1>
+                <h1 className='text-3xl font-bold text-[#785f24]'>GatherCloud</h1>
                 <ul className={`lg:flex hidden gap-8 items-center font-normal ${click ? 'hidden' : ''}`}>
                     <Link spy={true} smooth={true} duration={500} to="Home" offset={-70} className={navLinkClass}>Home</Link>
                     <Link spy={true} smooth={true} duration={500} to="About" offset={-70} className={navLinkClass}>About</Link>
-                    <RouterLink to="/service" className={navLinkClass}>Services</RouterLink>
+                    <RouterLink to="/service" className={navLinkClass}>Events</RouterLink>
                     <Link spy={true} smooth={true} duration={500} to="Contact" offset={-70} className={navLinkClass}>Contact</Link>
                     <RouterLink to="/authentication" className={navLinkClass}>Sign In</RouterLink>
                 </ul>
