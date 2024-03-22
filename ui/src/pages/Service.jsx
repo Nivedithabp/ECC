@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Navigationbar from '../components/Navigationbar';
 const Service = () => {
   const [services, setServices] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -52,6 +52,7 @@ const Service = () => {
 
   return (
     <div className="p-4">
+      <Navigationbar />
       <div className="flex items-center mb-4">
         <input
           type="text"
