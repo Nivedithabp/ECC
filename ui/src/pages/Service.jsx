@@ -21,6 +21,13 @@ const Service = () => {
       imageUrl: workshop, // Replace with your actual image path
       
     },
+    {
+      id: 'event3',
+      title: 'Our Grandpals painted a Wall!',
+      description: 'We saw our Silver haired cuties time travel to their childhood painting their heart out on Sassoon Docks Walls in Bloomington.',
+      imageUrl: workshop, // Replace with your actual image path
+      
+    },
   ]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState({
