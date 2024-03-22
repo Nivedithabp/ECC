@@ -1,7 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import Navigationbar from '../components/Navigationbar';
+import christmas from './../assets/christmas.png'
+import workshop from './../assets/workshop.png'
+import Navigationbar from '../components/Navigationbar'
+
 const Service = () => {
   const [services, setServices] = useState([]);
+  // Event data based on the provided screenshot, replace with actual data
+  const [events, setEvents] = useState([
+    {
+      id: 'event1',
+      title: 'Christmas Celebration with our Grandpals!',
+      description: 'Nothing will ever give you the heart to face another year, than a Christmas tree in the home and the people you love around it. These silver-haired lovelies deserved both.',
+      imageUrl: christmas, // Replace with your actual image path
+      
+    },
+    {
+      id: 'event2',
+      title: 'Mind & Movement Workshop at GatherCloud',
+      description: 'Very often seniors sink away into their homes with no mental or physical stimulation. Goodfellows refuses to accept this and we put together happy activities and games based on that to help keep their mind sharp and fight aging.',
+      imageUrl: workshop, // Replace with your actual image path
+      
+    },
+  ]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState({
     title: '',
@@ -10,7 +30,6 @@ const Service = () => {
     minPrice: '',
     maxPrice: '',
   });
-
   useEffect(() => {
     fetchServices();
   }, []);
@@ -51,8 +70,9 @@ const Service = () => {
   };
 
   return (
+
     <div className="p-4">
-      <Navigationbar />
+    <Navigationbar/>
       <div className="flex items-center mb-4">
         <input
           type="text"
@@ -113,15 +133,13 @@ const Service = () => {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-4">
-        {services.map((service) => (
-          <div key={service._id} className="border border-gray-300 rounded p-4">
-            <h3 className="font-bold">{service.deliveryServiceTitle}</h3>
-            <p>Type: {service.deliverServiceType}</p>
-            <p>Description: {service.deliveryServiceDescription}</p>
-            <p>Company: {service.deliverServiceCompany}</p>
-            <p>Price: ${service.deliverServicePrice}</p>
-          </div>
+      <div className="flex flex-col items-center justify-center">
+        {events.map((event) => (
+          <div key={event.id} className="mb-8 text-center">
+          <h2 className="text-2xl font-bold my-2">{event.title}</h2>
+          <p className="text-lg mb-4">{event.description}</p>
+          <img src={event.imageUrl} alt={event.title} className="w-full max-w-md mx-auto" />
+        </div>
         ))}
       </div>
     </div>
