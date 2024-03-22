@@ -103,24 +103,96 @@ const Service = () => {
 
   return (
 
-    <div className="p-4">
-    <Navigation/>
-      <div className="flex items-center mb-4">
-        <input
-          type="text"
-          placeholder="Search services..."
-          className="border border-gray-300 rounded p-2 mr-2 flex-grow"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button
-          className="bg-blue-500 text-white rounded p-2"
-          onClick={handleSearch}
-        >
-          Search
-        </button>
-      </div>
-      <div className="bg-black p-4 rounded mb-4">
+//     <div className="p-4">
+//     <Navigation/>
+//       <div className="flex items-center mb-4">
+//         <input
+//           type="text"
+//           placeholder="Search services..."
+//           className="border border-gray-300 rounded p-2 mr-2 flex-grow"
+//           value={searchTerm}
+//           onChange={(e) => setSearchTerm(e.target.value)}
+//         />
+//         <button
+//           className="bg-blue-500 text-white rounded p-2"
+//           onClick={handleSearch}
+//         >
+//           Search
+//         </button>
+//       </div>
+      // <div className="bg-black p-4 rounded mb-4">
+      //   <div className="flex items-center mb-2">
+      //     <input
+      //       type="text"
+      //       placeholder="Title"
+      //       className="border border-gray-300 rounded p-2 mr-2"
+      //       value={filter.title}
+      //       onChange={(e) => updateFilter('title', e.target.value)}
+      //     />
+      //     <input
+      //       type="text"
+      //       placeholder="date"
+      //       className="border border-gray-300 rounded p-2 mr-2"
+      //       value={filter.type}
+      //       onChange={(e) => updateFilter('type', e.target.value)}
+      //     />
+      //     <input
+      //       type="text"
+      //       placeholder="Company"
+      //       className="border border-gray-300 rounded p-2 mr-2"
+      //       value={filter.company}
+      //       onChange={(e) => updateFilter('company', e.target.value)}
+      //     />
+      //     <input
+      //       type="number"
+      //       placeholder="location"
+      //       className="border border-gray-300 rounded p-2 mr-2"
+      //       value={filter.minPrice}
+      //       onChange={(e) => updateFilter('minPrice', e.target.value)}
+      //     />
+      //     <input
+      //       type="number"
+      //       placeholder="category"
+      //       className="border border-gray-300 rounded p-2 mr-2"
+      //       value={filter.maxPrice}
+      //       onChange={(e) => updateFilter('maxPrice', e.target.value)}
+      //     />
+      //     <button
+      //       className="bg-green-500 text-white rounded p-2"
+      //       onClick={handleFilter}
+      //     >
+      //       Filter
+      //     </button>
+      //   </div>
+//       </div>
+//       <div className="flex flex-col items-center justify-center">
+//         {events.map((event) => (
+//           <div key={event.id} className="mb-8 text-center">
+//           <h2 className="text-2xl font-bold my-2">{event.title}</h2>
+//           <p className="text-lg mb-4">{event.description}</p>
+//           <img src={event.imageUrl} alt={event.title} className="w-full max-w-md mx-auto" />
+//         </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+<div className="p-4">
+<Navigation />
+<div className='p-10'/>
+<div className="flex items-center mb-4">
+  <input
+    type="text"
+    placeholder="Search services..."
+    className="border border-gray-300 rounded p-2 mr-2 flex-grow"
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+  <button className="bg-blue-500 text-white rounded p-2" onClick={handleSearch}>
+    Search
+  </button>
+</div>
+<div className="bg-black p-4 rounded mb-4">
         <div className="flex items-center mb-2">
           <input
             type="text"
@@ -164,18 +236,31 @@ const Service = () => {
             Filter
           </button>
         </div>
-      </div>
-      <div className="flex flex-col items-center justify-center">
-        {events.map((event) => (
-          <div key={event.id} className="mb-8 text-center">
-          <h2 className="text-2xl font-bold my-2">{event.title}</h2>
-          <p className="text-lg mb-4">{event.description}</p>
-          <img src={event.imageUrl} alt={event.title} className="w-full max-w-md mx-auto" />
         </div>
-        ))}
+<div className="flex flex-wrap justify-center">
+  {events.map((event) => (
+    <div key={event.id} className="flex mb-8 w-full max-w-4xl border rounded overflow-hidden shadow-lg">
+      <img src={event.imageUrl} alt={event.title} className="w-1/2" />
+      <div className="p-4 flex flex-col justify-between w-1/2">
+        <div>
+          <h2 className="text-2xl font-bold mb-2">{event.title}</h2>
+          <p className="text-lg mb-4">{event.description}</p>
+        </div>
+        <div className="p-2">
+          <button className="bg-blue-500 text-white rounded p-2 mr-2">
+            View Details
+          </button>
+          <button className="bg-green-500 text-white rounded p-2">
+            Register
+          </button>
+        </div>
       </div>
     </div>
-  );
+  ))}
+</div>
+</div>
+);
 };
+
 
 export default Service;
