@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import christmas from './../assets/christmas.png'
 import workshop from './../assets/workshop.png'
+import paint from './../assets/paint.png'
+import ferry from './../assets/ferry.png'
+import picnic from './../assets/picnic.png'
+import movie from './../assets/movie.png'
 import Navigationbar from '../components/Navigationbar'
 
 const Service = () => {
@@ -25,7 +29,28 @@ const Service = () => {
       id: 'event3',
       title: 'Our Grandpals painted a Wall!',
       description: 'We saw our Silver haired cuties time travel to their childhood painting their heart out on Sassoon Docks Walls in Bloomington.',
-      imageUrl: workshop, // Replace with your actual image path
+      imageUrl: paint, // Replace with your actual image path
+      
+    },
+    {
+      id: 'event4',
+      title: 'Ferry Ride with Granpals!',
+      description: 'We have left a bottle in the sea with a paper rolled with stories and smiles. This was not just a ferry ride but an emotion that all of us will carry through out our lives.',
+      imageUrl: ferry, // Replace with your actual image path
+      
+    },
+    {
+      id: 'event5',
+      title: 'Picnic at the park',
+      description: 'A bright, sunny day calls for a picnic with our favorites where we danced, sang and laughed our hearts out!',
+      imageUrl: picnic, // Replace with your actual image path
+      
+    },
+    {
+      id: 'event6',
+      title: 'Grandpals Movie Night',
+      description: 'Inox helped us curate a special movie night of endless wonder and popcorn, recliner seats and a 3D screening of a Hollywood favorite for our GrandPals!',
+      imageUrl: movie, // Replace with your actual image path
       
     },
   ]);
