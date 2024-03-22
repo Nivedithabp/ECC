@@ -5,7 +5,7 @@ import paint from './../assets/paint.png'
 import ferry from './../assets/ferry.png'
 import picnic from './../assets/picnic.png'
 import movie from './../assets/movie.png'
-import Navigationbar from '../components/Navigationbar'
+import Navigation from '../components/Navigation'
 
 const Service = () => {
   const [services, setServices] = useState([]);
@@ -104,7 +104,7 @@ const Service = () => {
   return (
 
     <div className="p-4">
-    <Navigationbar/>
+    <Navigation/>
       <div className="flex items-center mb-4">
         <input
           type="text"
@@ -131,7 +131,7 @@ const Service = () => {
           />
           <input
             type="text"
-            placeholder="Type"
+            placeholder="date"
             className="border border-gray-300 rounded p-2 mr-2"
             value={filter.type}
             onChange={(e) => updateFilter('type', e.target.value)}
@@ -145,14 +145,14 @@ const Service = () => {
           />
           <input
             type="number"
-            placeholder="Min Price"
+            placeholder="location"
             className="border border-gray-300 rounded p-2 mr-2"
             value={filter.minPrice}
             onChange={(e) => updateFilter('minPrice', e.target.value)}
           />
           <input
             type="number"
-            placeholder="Max Price"
+            placeholder="category"
             className="border border-gray-300 rounded p-2 mr-2"
             value={filter.maxPrice}
             onChange={(e) => updateFilter('maxPrice', e.target.value)}

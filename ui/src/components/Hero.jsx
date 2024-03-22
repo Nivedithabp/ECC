@@ -34,7 +34,7 @@ const Hero = () => {
           loop />
         </div>
 
-        <p className='md:text-2xl text-xl font-bold text-gray-500 mt-4 mb-10'>Effortless Connectivity: Uniting Communities, One Event at a Time.</p>
+        <p className='md:text-3xl text-xl font-bold text-gray-500 mt-4 mb-10'>Effortless Connectivity: Uniting Communities, One Event at a Time.</p>
         <button onClick={navigateToSearch} className='bg-[#785f24] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-white'>Get Started</button>
       </div>
     </div>
