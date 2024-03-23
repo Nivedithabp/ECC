@@ -1,0 +1,31 @@
+service:
+  name: auction-service
+
+plugins:
+  - serverless-bundle
+  - serverless-pseudo-parameters
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  memorySize: 256
+  stage: ${opt:stage, 'dev'}
+  region: eu-west-1
+  iamRoleStatements:
+    - ${file(iam/UserTableIAM.yml):UserTableIAM}
+
+resources:
+  Resources:
+    AuctionsTable: ${file(resources/UserTable.yml):User}
+    
+functions:
+  createAuction:
+    handler: src/handlers/createUser.handler
+    events:
+      - http:
+          method: POST
+          path: /user
+
+custom:
+  bundle:
+    linting: false
